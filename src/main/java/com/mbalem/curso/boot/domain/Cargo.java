@@ -1,11 +1,12 @@
 package com.mbalem.curso.boot.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @SuppressWarnings("Serial")
 @Entity
 @Table(name = "CARGOS")
-public class Cargos extends AbstractEntity<Long>{
+public class Cargo extends AbstractEntity<Long>{
 
     @Column(name = "nome", nullable = false, unique = true,length = 60)
     private String nome;
@@ -13,6 +14,17 @@ public class Cargos extends AbstractEntity<Long>{
     @ManyToOne
     @JoinColumn(name = "id_departamento_fk")
     private Departamento departamento;
+
+    @OneToMany(mappedBy = "cargo")
+    private List<Funcionarios> funcionarios;
+
+    public List<Funcionarios> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionarios> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
 
     public String getNome() {
         return nome;

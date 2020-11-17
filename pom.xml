@@ -59,17 +59,25 @@
             <artifactId>open-iconic</artifactId>
             <version>1.1.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>jquery-mask-plugin</artifactId>
             <version>1.14.15</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-mxj</artifactId>
+            <version>5.0.12</version>
+            <scope>runtime</scope>
+        </dependency>
 
 
 
