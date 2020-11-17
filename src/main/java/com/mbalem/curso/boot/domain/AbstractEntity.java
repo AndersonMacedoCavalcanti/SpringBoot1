@@ -35,6 +35,7 @@ public class AbstractEntity<ID extends Serializable> implements Serializable {
 
     @Override
     public String toString() {
-        return "id=" + id ;
+        return "id=" + 
+                id ;
     }
 }
