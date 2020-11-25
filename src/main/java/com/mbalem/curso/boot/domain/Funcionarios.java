@@ -1,22 +1,29 @@
 package com.mbalem.curso.boot.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "FUNCIONARIO")
+@Table(name = "FUNCIONARIOS")
 public class Funcionarios extends AbstractEntity<Long> {
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = false)
     private String nome;
 
+    @NumberFormat(style = NumberFormat.Style.CURRENCY, pattern = "#,##0.00")
     @Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
-    private String salario;
+    private BigDecimal salario;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_entrada", nullable = false, columnDefinition = "DATE")
     private LocalDate dataEntrada;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_saida", nullable = true, columnDefinition = "DATE")
     private LocalDate dataSaida;
 
@@ -36,11 +43,11 @@ public class Funcionarios extends AbstractEntity<Long> {
         this.nome = nome;
     }
 
-    public String getSalario() {
+    public BigDecimal getSalario() {
         return salario;
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(BigDecimal salario) {
         this.salario = salario;
     }
 

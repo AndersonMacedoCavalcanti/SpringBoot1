@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @SuppressWarnings("serial")
 @MappedSuperclass
-public class AbstractEntity<ID extends Serializable> implements Serializable {
+public abstract class AbstractEntity<ID extends Serializable> implements Serializable {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private ID id;

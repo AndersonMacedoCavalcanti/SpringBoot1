@@ -13,6 +13,11 @@ public interface FuncionarioService {
 
     Funcionarios buscarPorId(Long id);
 
+    List<Funcionarios> buscarPorNome(String nome);
+
+    List<Funcionarios> buscarPorCargo(Long id);
+
+
     List<Funcionarios> buscarTodos();
 
 }
