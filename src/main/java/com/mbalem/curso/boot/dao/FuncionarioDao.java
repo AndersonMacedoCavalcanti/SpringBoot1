@@ -1,8 +1,8 @@
 package com.mbalem.curso.boot.dao;
 
-import com.mbalem.curso.boot.domain.Departamento;
 import com.mbalem.curso.boot.domain.Funcionarios;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface FuncionarioDao {
@@ -19,5 +19,12 @@ public interface FuncionarioDao {
 
     List<Funcionarios> buscarPorNome(String nome);
 
+    List<Funcionarios> findByDataEntrada(LocalDate entrada);
+
+    List<Funcionarios> fundByDataEntradaDataSaida(LocalDate entrada, LocalDate saida);
+
+    List<Funcionarios> findByDataSaida(LocalDate saida);
+
     List<Funcionarios> buscarPorCargo(Long id);
+
 }
