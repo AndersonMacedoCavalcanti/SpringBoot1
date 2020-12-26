@@ -1,5 +1,8 @@
 package com.mbalem.curso.boot.domain;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public enum Uf {
     AC("AC", "Acre"),
     AL("AL", "Alagoas"),
@@ -28,6 +31,7 @@ public enum Uf {
     SE("SE", "Sergipe"),
     TO("TO", "Tocantins");
 
+    @NotBlank
     private String sigle;
     private String descricao;
 
